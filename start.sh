@@ -6,10 +6,8 @@ then
     exit 1
 fi
 
-
 # Change this to the correct location
 ctl=~/Desktop/mampstack-7.3.11-0/ctlscript.sh
-
 
 mamp_dir=${ctl%/*}
 
