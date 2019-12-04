@@ -215,7 +215,6 @@ emailRepeat.oninput = function() {
 
 var accPasswordDelete = document.getElementById("account-password")
 
-
 accPasswordDelete.oninput = function(event) {
 	let btn = document.getElementById("delete-account")
 	

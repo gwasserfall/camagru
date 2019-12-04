@@ -32,11 +32,10 @@
 							<p class="control is-expanded">
 								<input id="email-field" name="email" class="input" type="email">
 							</p>
+							<p id="email-field-info" class="help is-danger"></p>
 						</div>
 					</div>
 				</div>
-
-				<div id="email-message" style="display: none;" class="has-text-danger has-text-centered"></div>
 
 				<div class="field is-horizontal">
 					<div class="field-label grow-1 is-normal">
@@ -51,13 +50,12 @@
 										type="password"
 										minlength="8"
 										maxlength="32">
-								<img id="password-show-hide" class="hidden" src="/img/icons8-show-password-48.png">
+								<img class="show-password" src="/img/icons8-show-password-48.png">
 							</p>
+							<p id="password-field-info" class="help is-danger"></p>
 						</div>
 					</div>
 				</div>
-
-				<div id="password-message" style="display: none" class="has-text-danger has-text-centered"></div>
 
 				<div class="field is-horizontal">
 					<div class="field-label grow-1 is-normal">
@@ -71,13 +69,12 @@
 										type="password"
 										minlength="8"
 										maxlength="32">
-								<img id="repeat-show-hide" class="hidden" src="/img/icons8-show-password-48.png">
+								<img class="show-password" src="/img/icons8-show-password-48.png">
 							</p>
+							<p id="repeat-field-info" class="help is-danger"></p>
 						</div>
 					</div>
 				</div>
-
-				<div id="repeat-password-message" style="display: none" class="has-text-danger has-text-centered"></div>
 
 				<div class="box has-background-warning has-text-centered">
 				A password should be <strong>8 to 32 characters</strong> in length and <strong>contain at least</strong>:<br/> 
@@ -91,24 +88,26 @@
 				</div>
 
 			</div>
-			<div id="slide-right" class="box slide right" style="display: none;">
+			<div id="slide-right" class="box slide right">
 
 				<div class="field is-horizontal">
 					<div class="field-label grow-1 is-normal">
 						<label class="label">Handle</label>
 					</div>
 					<div class="field-body">
+						<div class="field is-expanded">
 						<div class="field has-addons">
 							<p class="control">
 								<a class="button is-static">@</a>
 							</p>
 							<p class="control is-expanded">
-								<input name="handle" id="handle" class="input" type="text">
+								<input id="handle" class="input" type="password">
 							</p>
+						</div>
+						<p id="handle-field-info" class="help is-danger"></p>
 						</div>
 					</div>
 				</div>
-
 
 				<div class="field is-horizontal">
 					<div class="field-label grow-1 is-normal">
@@ -117,7 +116,7 @@
 					<div class="field-body">
 						<div class="field">
 						<p class="control is-expanded">
-							<input name="first_name" class="input" type="text" name="first_name">
+							<input name="first_name" class="input" type="text" name="first_name" required>
 						</p>
 						</div>
 					</div>
@@ -138,7 +137,7 @@
 
 				<div class="buttons">
 					<button type="button" class="button is-light" onclick="previousSlide()">Back</button>
-					<button type="button" class="button is-primary" onclick="createUser('new_user')">Sign Up</button>
+					<button type="button" class="button is-primary" disabled onclick="createUser('new_user')">Sign Up</button>
 				</div>
 				</form>
 			</div>
