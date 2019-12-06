@@ -101,7 +101,7 @@
 								<a class="button is-static">@</a>
 							</p>
 							<p class="control is-expanded">
-								<input name="handle" id="handle" class="input" type="password">
+								<input name="handle" id="handle" class="input" type="text">
 							</p>
 						</div>
 						<p id="handle-field-info" class="help is-danger"></p>
@@ -116,7 +116,7 @@
 					<div class="field-body">
 						<div class="field">
 						<p class="control is-expanded">
-							<input name="first_name" class="input" type="text" name="first_name" required>
+							<input name="first_name" class="input" min="1" type="text" name="first_name" required>
 						</p>
 						</div>
 					</div>
@@ -137,7 +137,7 @@
 
 				<div class="buttons">
 					<button type="button" class="button is-light" onclick="previousSlide()">Back</button>
-					<button type="button" class="button is-primary" disabled onclick="createUser('new_user')">Sign Up</button>
+					<button id="sign-up" type="button" class="button is-primary" disabled onclick="createUser('new_user')">Sign Up</button>
 				</div>
 				</form>
 			</div>

@@ -96,6 +96,10 @@ input[type="password"] {
 	font-size: 1.01em;
 }
 
+.help {
+	font-size: 1.1em;
+}
+
 @media (max-width:641px) {
 	.message-header {
 		width: 100vw !important;

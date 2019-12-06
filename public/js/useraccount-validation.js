@@ -26,6 +26,10 @@ function validate_handle(event)
 			info.innerText = "Invalid character in handle. Valid characters are A-Z a-z 0-9 - _"
 		}
 	}
+	else
+	{
+		submit.disabled = true
+	}
 }
 
 document.getElementById("new-handle").oninput = validate_handle

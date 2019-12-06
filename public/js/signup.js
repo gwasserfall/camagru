@@ -190,6 +190,7 @@ function validate_first_slide()
 	next.disabled = !valid;
 }
 
+
 function validate_handle(event)
 {
 	this.classList.add("is-danger")
@@ -208,6 +209,22 @@ function validate_handle(event)
 			info.innerText = "Invalid character in handle. Valid characters are A-Z a-z 0-9 - _"
 		}
 	}
+	validate_sec_slide()
+}
+
+function validate_sec_slide()
+{
+	var valid = true
+	var next = document.getElementById("sign-up")
+	let fields = [
+		document.getElementById("handle")]
+
+	fields.forEach(field => {
+		if (field.classList.contains("is-danger") || field.value.length < 3)
+			valid = false
+	})
+
+	next.disabled = !valid;
 }
 
 document.getElementById("handle").oninput = validate_handle
