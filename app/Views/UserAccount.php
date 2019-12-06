@@ -49,20 +49,25 @@
         <form id="update-handle-form">
 
             <div class="field is-horizontal">
-                <div class="field-label grow-1 is-normal">
-                    <label class="label">Handle</label>
-                </div>
-                <div class="field-body">
-                    <div class="field has-addons">
-                        <p class="control">
-                            <a class="button is-static">@</a>
-                        </p>
-                        <p class="control is-expanded">
-                            <input name="new-handle" id="new-handle" class="input" type="text" value="<?= $user["handle"] ?>">
-                        </p>
-                    </div>
-                </div>
-            </div>
+					<div class="field-label grow-1 is-normal">
+						<label class="label">Handle</label>
+					</div>
+					<div class="field-body">
+						<div class="field is-expanded">
+						<div class="field has-addons">
+							<p class="control">
+								<a class="button is-static">@</a>
+							</p>
+							<p class="control is-expanded">
+								<input id="new-handle" name="new-handle" class="input" maxlength="16" type="text" value="<?= $user["handle"] ?>">
+							</p>
+						</div>
+						<p id="handle-field-info" class="help is-danger"></p>
+						</div>
+					</div>
+				</div>
+
+
 
             <div class="field is-horizontal">
                 <div class="field-label grow-1 is-normal">
@@ -123,7 +128,7 @@
                         <div class="field right-inner-addon">
                             <p class="control">
                                 <input id="old-password" name="old-password" class="input" type="password">
-                                <img id="old-password-show-hide" class="hidden" src="/img/icons8-show-password-48.png">
+                                <img id="old-password-show-hide" class="hidden show-password" src="/img/icons8-show-password-48.png">
                             </p>
                         </div>
                     </div>
@@ -137,8 +142,9 @@
                         <div class="field right-inner-addon">
                             <p class="control">
                                 <input id="new-password" name="new-password" class="input" type="password">
-                                <img id="password-show-hide" class="hidden" src="/img/icons8-show-password-48.png">
+                                <img id="password-show-hide" class="hidden show-password" src="/img/icons8-show-password-48.png">
                             </p>
+                            <p id="password-field-info" class="help is-danger"></p>
                         </div>
                     </div>
                 </div>
@@ -153,8 +159,9 @@
                         <div class="field right-inner-addon">
                             <p class="control">
                                 <input id="repeat-new-password" class="input" type="password">
-                                <img id="repeat-show-hide" class="hidden" src="/img/icons8-show-password-48.png">
+                                <img id="repeat-show-hide" class="hidden show-password" src="/img/icons8-show-password-48.png">
                             </p>
+                            <p id="repeat-field-info" class="help is-danger"></p>
                         </div>
                     </div>
                 </div>
@@ -201,7 +208,7 @@
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
-                                <input id="new-email" name="new-email" class="input" type="email" value="<?= $user["email"] ?>">
+                                <input id="new-email" name="new-email" class="input" type="email" placeholder="<?= $user["email"] ?>">
                             </p>
                         </div>
                     </div>
@@ -291,7 +298,7 @@
                     Delete account
                 </h1>
                 <h2 class="subtitle is-white">
-                    Permanently delete your account and all posts. This action is nonreversible
+                    Permanently delete your account and all posts. This action is irreversible
                 </h2>
                 </div>
             </div>
@@ -326,7 +333,6 @@
 
 <script src="/js/accounts/edit.js"></script>
 <script src="/js/useraccount-validation.js"></script>
-<script src="/js/password-show-hide.js"></script>
 
 <?php Component::load("Desktop/SignedInFooter-desktop") ?>
 </body>

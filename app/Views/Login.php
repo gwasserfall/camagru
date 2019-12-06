@@ -49,7 +49,7 @@
                                     type="password"
                                     minlength="8"
                                     maxlength="32">
-                            <img id="password-show-hide" class="hidden" src="/img/icons8-show-password-48.png">
+                            <img id="password-show-hide" class="hidden show-password" src="/img/icons8-show-password-48.png">
                         </p>
                     </div>
                 </div>
@@ -70,7 +70,6 @@
 </div>
 
 <script src="/js/actions/login.js"></script>
-<script src="/js/password-show-hide.js"></script>
 
 <?php Component::load("Desktop/GenericFooter-desktop") ?>
 </body>

@@ -86,6 +86,7 @@ function deleteAccount(event)
 
     Api.post("/accounts/delete", form)
         .then(resp => {
+
             if (!resp.success)
             {
                 Messages.error(resp.message)
@@ -95,10 +96,10 @@ function deleteAccount(event)
                 input.focus()
             }
             else
+            {
                 Messages.info(resp.message)
-                setTimeout(() => {
-                    document.location.href = "/"
-                }, 500);
+                document.location.href = "/"
+            }
         })
 
 }

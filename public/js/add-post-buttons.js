@@ -1,3 +1,20 @@
+
+
+function captureValid()
+{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 function toggleButtonUpload() {
 
     var uploadButton = document.getElementById("upload-button");

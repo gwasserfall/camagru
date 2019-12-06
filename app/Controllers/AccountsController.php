@@ -94,7 +94,7 @@ class AccountsController extends BaseController
 			}
 			else
 			{
-				RenderView::json([], 400, "Password incorrect.");
+				RenderView::json([], 400, "Old password is incorrect.");
 			}
 		}
 		else
@@ -129,7 +129,7 @@ class AccountsController extends BaseController
 		if (isset($data["account-password"]))
 		{
 			if (!$this->model->authenticate($user["email"], $data["account-password"]))
-				RenderView::json([], 400, "Account password is invalid.");
+				RenderView::json([], 400, "Supplied password does not match account password.");
 
 			$response = $this->model->deleteUserById($user["id"]);
 

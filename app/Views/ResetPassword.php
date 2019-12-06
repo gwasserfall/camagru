@@ -82,8 +82,6 @@ document.getElementById("reset-password-form").addEventListener("submit", login)
 
 </script>
 
-<script src="/js/password-show-hide.js"></script>
-
 <?php Component::load("Desktop/GenericFooter-desktop") ?>
 </body>
 <?= Component::load("GlobalFooter") ?>

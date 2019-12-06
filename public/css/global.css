@@ -87,6 +87,15 @@ video {
 	opacity: 1;
 }
 
+input[type="password"] {
+	font:small-caption;font-size:18px
+}
+
+::placeholder {
+	color:lightgray;
+	font-size: 1.01em;
+}
+
 @media (max-width:641px) {
 	.message-header {
 		width: 100vw !important;

@@ -101,7 +101,7 @@
 								<a class="button is-static">@</a>
 							</p>
 							<p class="control is-expanded">
-								<input id="handle" class="input" type="password">
+								<input name="handle" id="handle" class="input" type="password">
 							</p>
 						</div>
 						<p id="handle-field-info" class="help is-danger"></p>

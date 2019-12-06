@@ -195,7 +195,7 @@ function validate_handle(event)
 	this.classList.add("is-danger")
 	let info = document.getElementById("handle-field-info")
 
-	if (this.value.length > 3)
+	if (this.value.length > 3) 
 	{
 		if (/^[a-zA-Z0-9_-]*$/.test(this.value))
 		{

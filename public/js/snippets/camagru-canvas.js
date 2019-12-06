@@ -9,6 +9,10 @@ var layers = document.getElementById("layers")
 var counter = 0;
 var cameraReady = false
 
+
+var btn_
+
+
 ApiClient.getStickers()
 	.then(resp => {
 		
@@ -127,8 +131,14 @@ function addLayerEntryBefore(name)
 	layers.prepend(div)
 }
 
-function uploadFile()
+function uploadFile(el)
 {
+	el.classList.add("is-primary")
+	document.getElementById("selfie-button").classList.remove("is-primary")
+
+
+
+	killVideo()
 	fileInput.click()
 }
 
@@ -184,6 +194,8 @@ function webcam()
 	video.autoplay = true
 	video.id = "base"
 
+	cameraReady = true
+
 	if (navigator.mediaDevices.getUserMedia) {
 		navigator.mediaDevices.getUserMedia({ video: { width: 600, height: 600 } })
 		  .then(function (stream) {
@@ -192,7 +204,9 @@ function webcam()
 				return new Promise(resolve => video.onloadedmetadata = resolve);
 		  })
 		  .then(function () {
-				document.getElementById("capture-button").disabled = false
+				let button = document.getElementById("capture-button")
+				button.disabled = false
+				cameraReady = true
 		  })
 		  .catch(function (error) {
 			Messages.error(error);

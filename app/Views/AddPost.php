@@ -28,10 +28,10 @@
 			<div id="controls" class="media-controls columns is-vcentered" style="margin-bottom: -1rem;">
 				<div class="field has-addons column">
 					<div class="control">
-						<a id="upload-button" onclick="uploadFile(); toggleButtonUpload();" class="button is-medium">Upload Image</a>
+						<a id="upload-button" onclick="uploadFile(this); toggleButtonUpload();" class="button is-medium">Upload Image</a>
 					</div>
 					<div class="control">
-						<a id="selfie-button" onclick="webcam(); toggleButtonSelfie();" class="button is-medium">Selfie</a>
+						<a id="selfie-button" onclick="webcam(this); toggleButtonSelfie();" class="button is-medium">Selfie</a>
 					</div>
 				</div>
 			</div>
