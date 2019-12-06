@@ -9,8 +9,19 @@ var layers = document.getElementById("layers")
 var counter = 0;
 var cameraReady = false
 
+window.addEventListener("DOMContentLoaded", () => {
+	setInterval(() => {
+		var hasBase = false
+		let button = document.getElementById("save-post")
+		
+		document.getElementById("layers").querySelectorAll(".layers").forEach(el => {
+			if (el.id == "base")
+				hasBase = true
+		})
 
-var btn_
+		button.disabled = hasBase
+	}, 500);
+})
 
 
 ApiClient.getStickers()
@@ -135,8 +146,7 @@ function uploadFile(el)
 {
 	el.classList.add("is-primary")
 	document.getElementById("selfie-button").classList.remove("is-primary")
-
-
+	document.getElementById("stickers").style.display = ""
 
 	killVideo()
 	fileInput.click()
@@ -157,13 +167,20 @@ function removeBaseLayer()
 	if (base)
 		base.parentElement.removeChild(base)
 
+	document.querySelectorAll(".layer").forEach(el => {
+		console.log(el)
+		if (el.innerText === "base")
+			el.parentNode.removeChild(el)
+	})
+	
+
 	// Disable post button
 	document.getElementById("save-post").disabled = true
 }
 
 fileInput.onchange = function(event)
 {
-	if (this.files.length)
+	if (this.files.length > 0)
 	{
 		removeBaseLayer()
 		newLayer(URL.createObjectURL(this.files[0]), "base")
@@ -173,10 +190,18 @@ fileInput.onchange = function(event)
 
 		killVideo()
 	}
+	else
+	{
+		document.getElementById("upload-button").classList.remove("is-primary")
+	}
 }
 
-function snapshot()
+function snapshot(el)
 {
+	el.disabled = true
+	el.classList.remove("is-primary")
+	document.getElementById("selfie-button").classList.remove("is-primary")
+
 	if (webStream)
 	{	
 		var video = document.querySelector("video")
@@ -184,12 +209,20 @@ function snapshot()
 		newLayer(video, "base")
 		killVideo()
 	}
+	else
+	{
+		Messages.info("Webcam not ready, please reload the page.")
+	}
 }
 
-function webcam()
+function webcam(el)
 {
 	removeBaseLayer()
 	var video = document.createElement("video")
+
+	el.classList.add("is-primary")
+	document.getElementById("upload-button").classList.remove("is-primary")
+	document.getElementById("stickers").style.display = ""
 
 	video.autoplay = true
 	video.id = "base"
@@ -205,6 +238,7 @@ function webcam()
 		  })
 		  .then(function () {
 				let button = document.getElementById("capture-button")
+				button.classList.add("is-primary")
 				button.disabled = false
 				cameraReady = true
 		  })

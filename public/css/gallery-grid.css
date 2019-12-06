@@ -94,11 +94,6 @@
     align-items: center;
 }
 
-.single:hover {
-    transition: all 130ms ease-in-out;
-    transform: scale(1.2);
-}
-
 .counter {
     font-weight: bold;
     font-size: 1.2em;

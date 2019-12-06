@@ -73,4 +73,14 @@ class BaseController
 		$this->user = $GLOBALS["user"];
 		return (new UserModel())->getUserByEmail($_SESSION["logged_in_uid"]);
 	}
+
+	public function keysMissing($array, $keys)
+	{
+		foreach ($keys as $key)
+		{
+			if (!isset($array[$key]))
+				return $key;
+		}
+		return NULL;
+	}
 }

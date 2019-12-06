@@ -76,7 +76,7 @@
                 <div class="field-body">
                     <div class="field has-addons">
                         <p class="control is-expanded">
-                            <input name="new-firstname" class="input" type="text" value="<?= $user["first_name"] ?>">
+                            <input name="new-firstname" min="3" class="input" type="text" value="<?= $user["first_name"] ?>">
                         </p>
                     </div>
                 </div>
@@ -210,6 +210,7 @@
                             <p class="control">
                                 <input id="new-email" name="new-email" class="input" type="email" placeholder="<?= $user["email"] ?>">
                             </p>
+                            <p id="email-field-info" class="help is-danger"></p>
                         </div>
                     </div>
                 </div>
@@ -225,6 +226,7 @@
                             <p class="control">
                                 <input id="new-email-repeat" class="input" type="email">
                             </p>
+                            <p id="email-field-info" class="help is-danger"></p>
                         </div>
                     </div>
                 </div>

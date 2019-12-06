@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", e => {
             input.type = "text"
         }
 
-        el.onmouseleave = function()
+        el.parentElement.onmouseleave = function()
         {
             let inp = this.parentNode.querySelector("input")
             document.querySelectorAll(".show-password").forEach(img => {

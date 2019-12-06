@@ -1,83 +1,67 @@
 
+// function toggleButtonUpload() {
 
-function captureValid()
-{
-    
-}
+//     var uploadButton = document.getElementById("upload-button");
+//     var selfieButton = document.getElementById("selfie-button");
 
+//     if (uploadButton.classList.contains("is-light") && selfieButton.classList.contains("is-primary")) 
+//     {
+//         uploadButton.classList.remove("is-light");
+//         uploadButton.classList.add("is-primary");
+//         selfieButton.classList.remove("is-primary");
+//         selfieButton.classList.add("is-light")
+//     }
+//     else if (!(uploadButton.classList.contains("is-light") || selfieButton.classList.contains("is-light") || uploadButton.classList.contains("is-primary") || selfieButton.classList.contains("is-primary"))) {
+//         uploadButton.classList.add("is-primary");
+//         selfieButton.classList.add("is-light")
+//     }
+// }
 
+// function toggleButtonSelfie() {
 
-
-
-
-
-
-
-
-
-function toggleButtonUpload() {
-
-    var uploadButton = document.getElementById("upload-button");
-    var selfieButton = document.getElementById("selfie-button");
-
-    if (uploadButton.classList.contains("is-light") && selfieButton.classList.contains("is-primary")) 
-    {
-        uploadButton.classList.remove("is-light");
-        uploadButton.classList.add("is-primary");
-        selfieButton.classList.remove("is-primary");
-        selfieButton.classList.add("is-light")
-    }
-    else if (!(uploadButton.classList.contains("is-light") || selfieButton.classList.contains("is-light") || uploadButton.classList.contains("is-primary") || selfieButton.classList.contains("is-primary"))) {
-        uploadButton.classList.add("is-primary");
-        selfieButton.classList.add("is-light")
-    }
-}
-
-function toggleButtonSelfie() {
-
-    var uploadButton = document.getElementById("upload-button");
-    var selfieButton = document.getElementById("selfie-button");
+//     var uploadButton = document.getElementById("upload-button");
+//     var selfieButton = document.getElementById("selfie-button");
     
 
-    if (selfieButton.classList.contains("is-light") && uploadButton.classList.contains("is-primary")) 
-    {
-        selfieButton.classList.remove("is-light");
-        selfieButton.classList.add("is-primary");
-        uploadButton.classList.remove("is-primary");
-        uploadButton.classList.add("is-light")
-    }
-    else if (!(uploadButton.classList.contains("is-light") || selfieButton.classList.contains("is-light") || uploadButton.classList.contains("is-primary") || selfieButton.classList.contains("is-primary"))) {
-        selfieButton.classList.add("is-primary");
-        uploadButton.classList.add("is-light")
-    }
-}
+//     if (selfieButton.classList.contains("is-light") && uploadButton.classList.contains("is-primary")) 
+//     {
+//         selfieButton.classList.remove("is-light");
+//         selfieButton.classList.add("is-primary");
+//         uploadButton.classList.remove("is-primary");
+//         uploadButton.classList.add("is-light")
+//     }
+//     else if (!(uploadButton.classList.contains("is-light") || selfieButton.classList.contains("is-light") || uploadButton.classList.contains("is-primary") || selfieButton.classList.contains("is-primary"))) {
+//         selfieButton.classList.add("is-primary");
+//         uploadButton.classList.add("is-light")
+//     }
+// }
 
-document.getElementById("upload-button").addEventListener("click", stickerListener);
-document.getElementById("selfie-button").addEventListener("click", stickerListener);
+// document.getElementById("upload-button").addEventListener("click", stickerListener);
+// document.getElementById("selfie-button").addEventListener("click", stickerListener);
 
-function stickerListener() {
-    var stickers = document.getElementById("stickers");
+// function stickerListener() {
+//     var stickers = document.getElementById("stickers");
 
-    if (stickers.style.display == 'none')
-    {
-        stickers.style.display = '';
-    }
+//     if (stickers.style.display == 'none')
+//     {
+//         stickers.style.display = '';
+//     }
 
-    stickers.addEventListener("click", enableCapture);
+//     stickers.addEventListener("click", enableCapture);
 
-    function enableCapture() {
-        var uploadButton = document.getElementById("upload-button");
-        var selfieButton = document.getElementById("selfie-button");
-        var captureButton = document.getElementById("capture-button")
+//     function enableCapture() {
+//         var uploadButton = document.getElementById("upload-button");
+//         var selfieButton = document.getElementById("selfie-button");
+//         var captureButton = document.getElementById("capture-button")
 
-        captureButton.classList.remove("is-light");
-        captureButton.classList.add("is-primary");
+//         captureButton.classList.remove("is-light");
+//         captureButton.classList.add("is-primary");
 
-        captureButton.addEventListener("click", enablePost);
+//         captureButton.addEventListener("click", enablePost);
 
-        function enablePost() {
+//         function enablePost() {
 
-            document.getElementById("save-post").disabled = false;
-        }
-    }
-}
+//             document.getElementById("save-post").disabled = false;
+//         }
+//     }
+// }

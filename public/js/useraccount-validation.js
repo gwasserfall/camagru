@@ -154,9 +154,55 @@ document.getElementById("new-password").oninput = validate_password
 
 
 
+// Email
+function emails_valid()
+{
+	var valid = true
+	var submit = document.getElementById("update-email")
+	let fields = [
+		document.getElementById("new-email"),
+		document.getElementById("new-email-repeat")]
 
+	fields.forEach(field => {
+		if (field.classList.contains("is-danger") || field.value.length < 3)
+			valid = false
+	})
 
+	submit.disabled = !valid;
+}
 
+function validate_email(event)
+{
+	this.classList.add("is-danger")
+	if (this.value.length > 3)
+	{
+		let info = this.parentNode.nextElementSibling
+		if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value))
+		{
+			if (this.id === "new-email-repeat")
+			{
+				let email = document.getElementById("new-email")
+				if (this.value != email.value)
+				{
+					info.innerText = "Emails do not match"
+					emails_valid()
+					return false
+				}
+			}
+			info.innerText = ""
+			this.classList.remove("is-danger")
+			this.classList.add("is-success")
+		}
+		else
+		{
+			info.innerText = "This email is not valid"
+		}
+	}
+	emails_valid()
+}
+
+document.getElementById("new-email").oninput = validate_email
+document.getElementById("new-email-repeat").oninput = validate_email
 
 
 

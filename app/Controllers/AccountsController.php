@@ -110,8 +110,10 @@ class AccountsController extends BaseController
 			RenderView::json([], 400, "Handle cannot be blank.");
 		if (!isset($data["new-firstname"]))
 			RenderView::json([], 400, "First name cannot be blank.");
-		if (!isset($data["new-lastname"]))
-			RenderView::json([], 400, "Last name cannot be blank.");
+		if (strlen($data["new-firstname"]) < 1)
+			RenderView::json([], 400, "First name cannot be blank.");
+		if (strlen($data["new-handle"]) < 3)
+			RenderView::json([], 400, "Handle must be atleast 4 characters.");
 
 		$response = $this->model->updateDetails($user["id"], $data["new-handle"], $data["new-firstname"], $data["new-lastname"]);
 

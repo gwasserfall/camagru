@@ -28,10 +28,10 @@
 			<div id="controls" class="media-controls columns is-vcentered" style="margin-bottom: -1rem;">
 				<div class="field has-addons column">
 					<div class="control">
-						<a id="upload-button" onclick="uploadFile(this); toggleButtonUpload();" class="button is-medium">Upload Image</a>
+						<a id="upload-button" onclick="uploadFile(this)" class="button is-medium">Upload Image</a>
 					</div>
 					<div class="control">
-						<a id="selfie-button" onclick="webcam(this); toggleButtonSelfie();" class="button is-medium">Selfie</a>
+						<a id="selfie-button" onclick="webcam(this)" class="button is-medium">Selfie</a>
 					</div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 
 			<div id="controls" class="media-controls columns is-vcentered">
 				<div class="column" style="margin-top: -.5rem;">
-					<button id="capture-button" onclick="snapshot()" class="button is-medium is-light" disabled>Capture</button>
+					<button id="capture-button" onclick="snapshot(this)" class="button is-medium" disabled>Capture</button>
 				</div>
 				<div class="column" >
 					<button id="save-post" class="level-item button is-primary is-large" disabled>1... 2... 3... Post!</button>

@@ -7,7 +7,7 @@ then
 fi
 
 # Change this to the correct location
-ctl=~/Desktop/mampstack-7.3.11-0/ctlscript.sh
+ctl=/Applications/mampstack-7.3.10-0/ctlscript.sh
 
 mamp_dir=${ctl%/*}
 
