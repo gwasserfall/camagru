@@ -60,7 +60,6 @@
             </div>
 
             <div class="buttons">
-                <button type="button" class="button is-light" onclick="previousSlide()">Back</button>
                 <button id="login" class="button is-primary">Log in</button>
             </div>
         </div>
