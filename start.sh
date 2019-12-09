@@ -7,7 +7,7 @@ then
 fi
 
 # Change this to the correct location
-ctl=/Applications/mampstack-7.3.10-0/ctlscript.sh
+ctl=~/Desktop/mampstack-7.3.11-0/ctlscript.sh
 
 mamp_dir=${ctl%/*}
 
@@ -42,6 +42,6 @@ $myphp LoadStickers.php
 
 cd ../..
 
-$myphp -S 0.0.0.0:8080 -t public/
+$myphp -S localhost:8080 -t public/
 
 exit 1

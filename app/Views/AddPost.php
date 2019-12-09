@@ -40,7 +40,7 @@
 				<div class="view-spacer"></div>
 				<div id="view" class="media-view"></div>
 				<div class="layers-container is-hidden-touch has-background-light" style="margin-left: 1rem;">
-					<h2 class="title has-text-centered" style="padding: 1rem;">Layers:<h2>
+					<h2 class="title has-text-centered" style="padding: 1rem;">Layers:</h2>
 					<div id="layers" class="is-family-secondary font-regular" style="margin-top: -1rem;"></div>
 				</div>
 			</div>
@@ -99,6 +99,10 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 <style>
+
+#layers {
+	overflow-y: scroll;
+}
 
 @media only screen and (max-width: 768px) {
 	.media-view {

@@ -14,12 +14,11 @@ window.addEventListener("DOMContentLoaded", () => {
 		var hasBase = false
 		let button = document.getElementById("save-post")
 		
-		document.getElementById("layers").querySelectorAll(".layers").forEach(el => {
-			if (el.id == "base")
+		document.getElementById("layers").querySelectorAll(".layer").forEach(el => {
+			if (el.innerText === "base")
 				hasBase = true
 		})
-
-		button.disabled = hasBase
+		button.disabled = !hasBase
 	}, 500);
 })
 
