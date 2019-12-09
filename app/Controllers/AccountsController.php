@@ -133,9 +133,7 @@ class AccountsController extends BaseController
 			if (!$this->model->authenticate($user["email"], $data["account-password"]))
 				RenderView::json([], 400, "Supplied password does not match account password.");
 
-			$response = $this->model->deleteUserById($user["id"]);
-
-			if ($response->isValid())
+			if ($this->model->deleteUserById($user["id"]))
 			{
 				$_SESSION = array();
 				RenderView::json([], 200, "Account has been deleted");
