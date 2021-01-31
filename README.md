@@ -2,8 +2,10 @@
 
 Social media site project for WeThinkCode_ in PHP without the use of PHP frameworks.
 
-MVC pattern implemented without frameworks
-PHP PDO database connection
+- MVC pattern implemented without frameworks
+- PHP PDO database connection
+
+Bulma CSS framework used for frontend
 
 ## Setup
 
