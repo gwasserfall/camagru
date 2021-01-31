@@ -28,7 +28,7 @@ class Comment
         var container = document.createElement("article")
         container.className = "media comment"
         container.innerHTML = this.html
-		parent.prepend(container)
+		parent.append(container)
     }
 }
 

@@ -10,12 +10,6 @@ class RenderView
 		return $user;
 	}
 
-	/**
-	 * Render a view file back to browser
-	 *
-	 * @param string $viewFile Name of the view file, with or without extension.
-	 * @param array  $data Array of data to be available in the view.
-	 */
 	public static function file($viewFile, $data = [])
 	{
 		if (!strstr($viewFile, ".php"))
@@ -30,12 +24,6 @@ class RenderView
 		die();
 	}
 
-	/**
-	 * Set headers to application/json and send serialised $data to browser.
-	 *
-	 * @param array $data Assoc array of the data to be serialised.
-	 * @param int   $status_code HTTP Status code.
-	 */
 	public static function json($data, $status_code, $message="")
 	{
 		header('Content-Type: application/json');
@@ -50,11 +38,6 @@ class RenderView
 		die();
 	}
 
-	/**
-	 * Set headers to application/json and send serialised $data to browser.
-	 *
-	 * @param string $snippetFile Name of snippet file.
-	 */
 	public static function snippet($snippetFile, $data = NULL)
 	{
 		if (!strstr($snippetFile, ".php"))
@@ -68,11 +51,6 @@ class RenderView
 		die();
 	}
 
-	/**
-	 * Redirect browser to a path
-	 *
-	 * @param string $path Relative path to redirect to.
-	 */
 	public static function redirect($path)
 	{
 		header("Location: $path");
