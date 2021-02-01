@@ -52,3 +52,14 @@ Setup complete, to launch webserver use : 'php -s 0.0.0.0:8000 -t public/'
 ```
 
 The built in PHP webserver is used to run the app.
+
+
+## Testing
+
+Testing is done against the controllers to ensure core functionality of the program is intact.
+
+Requirements
+
+Python3
+
+python3 -m unittest discover -s tests

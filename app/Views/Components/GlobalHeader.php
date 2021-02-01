@@ -17,7 +17,7 @@
 	<script src="/js/show-password.js"></script>
 	<script src="/js/actions/send-gen-mail.js"></script>
 	<script src="/js/posts/like.js"></script>
-	<title><?= $data["title"] ?></title>
+	<title><?= $data["title"] ?? "404" ?></title>
 	<script>
 		// Hackzzzz
 		var overrideHandle = null

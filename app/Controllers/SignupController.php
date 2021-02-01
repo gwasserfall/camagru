@@ -50,9 +50,14 @@ class SignupController extends BaseController
 
 				$link = SERVER_ADDRESS . "users/verify/" . $user["id"] . "/" . hash("sha256", $data["email"] . SALT);
 				$name = $user["first_name"];
-				Email::send_verification_email($name, $user["email"], $link);
 
-				RenderView::json([], 200, "User created successfully, please check your email to verify your account");
+				// Don't send email when testing
+				if (!isset($data["no_email"])) {
+					Email::send_verification_email($name, $user["email"], $link);
+					RenderView::json([], 200, "User created successfully, please check your email to verify your account");
+				} else {
+					RenderView::json([], 200, "User created successfully, verification link not sent");
+				}
 			}
 			else
 				RenderView::json([], 400, "Failed to create user");

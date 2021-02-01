@@ -37,8 +37,14 @@ class LoginController extends BaseController
                 {
                     $link = SERVER_ADDRESS . "users/verify/" . $user["id"] . "/" . hash("sha256", $data["email"] . SALT);
                     $name = $user["first_name"];
-                    Email::send_verification_email($name, $user["email"], $link);
-                    RenderView::json([], 401, "Your account is not verified, resending verification email.");
+
+                    // Don't send email when testing
+                    if (!isset($data["no_email"])) {
+                        Email::send_verification_email($name, $user["email"], $link);
+                        RenderView::json([], 401, "Your account is not verified, resending verification email.");
+                    } else {
+                        RenderView::json([], 401, "Your account is not verified, verification email not sent.");
+                    }
                 }
             }
             else
