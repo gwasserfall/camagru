@@ -105,7 +105,7 @@
                         <div class="content">
                         <p>
                             <strong>@<?= $comment["handle"] ?></strong> &nbsp; 
-                            <?php  if ($comment["uid"] == $user["id"]): ?>
+                            <?php  if (!is_null($user) && $comment["uid"] == $user["id"]): ?>
                                 <span onclick="deleteComment(this)" id="<?= $comment["cid"] ?>" class="icon-trash is-pulled-right"></span> 
                             <?php endif; ?>
                             <small class="is-pulled-right"><?= $comment["date"] ?></small> 
@@ -119,30 +119,33 @@
         <?php endforeach; ?>
 
         </div>
-        <div class="add-comment">
 
-        <article class="media">
-            <figure class="media-left image is-64x64">
-                <p class="">
-                    <img class="is-rounded" src="/img/User Icon.png">
-                </p>
-            </figure>
-            <div class="media-content">
-                <div class="field">
-                <p class="control">
-                    <textarea id="comment-text" data-postid="<?= $data["post"]["id"] ?>" class="textarea has-fixed-size" placeholder="Add a comment..." height="35"></textarea>
-                </p>
-                </div>
+        <?php  if (!is_null($user)): ?>
+            <div class="add-comment">
 
-                <div class="level-right">
-                    <div class="level-item">
-                        <button onclick="addComment()" class="button is-primary">Submit</button>
+            <article class="media">
+                <figure class="media-left image is-64x64">
+                    <p class="">
+                        <img class="is-rounded" src="/img/User Icon.png">
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="field">
+                    <p class="control">
+                        <textarea id="comment-text" data-postid="<?= $data["post"]["id"] ?>" class="textarea has-fixed-size" placeholder="Add a comment..." height="35"></textarea>
+                    </>
                     </div>
-                </div>
 
+                    <div class="level-right">
+                        <div class="level-item">
+                            <button onclick="addComment()" class="button is-primary">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+                </article>
             </div>
-            </article>
-        </div>
+        <?php endif; ?>
     </div>
 </div>
 

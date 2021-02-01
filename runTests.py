@@ -44,7 +44,7 @@ db = pymysql.connect(
 	autocommit=True
 )
 
-with db.cursor() as c:
+# with db.cursor() as c:
 
-	# Delete test user
-	c.execute("DELETE FROM users WHERE email='test_user@test.com';")
+# 	# Delete test user
+# 	c.execute("DELETE FROM users WHERE email='test_user@test.com';")

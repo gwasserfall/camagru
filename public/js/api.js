@@ -1,31 +1,3 @@
-class Api
-{
-	static get(url)
-	{
-		return fetch(url).then(resp => resp.json())
-	}
-
-	static post(url, body)
-	{
-		let options = {
-			method: "POST",
-			body: body
-		}
-		return fetch(url, options).then(resp => resp.json())
-	}
-
-	static delete(url, body = {})
-	{
-		let options = {
-			method: "DELETE",
-			body: body
-		}
-		return fetch(url, options).then(resp => resp.json())
-	}
-}
-
-
-
 
 class ApiClient
 {
@@ -110,3 +82,28 @@ class ApiClient
 }
 
 
+class Api
+{
+	static get(url)
+	{
+		return fetch(url).then(resp => resp.json())
+	}
+
+	static post(url, body)
+	{
+		let options = {
+			method: "POST",
+			body: body
+		}
+		return fetch(url, options).then(resp => resp.json())
+	}
+
+	static delete(url, body = {})
+	{
+		let options = {
+			method: "DELETE",
+			body: body
+		}
+		return fetch(url, options).then(resp => resp.json())
+	}
+}

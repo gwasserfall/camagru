@@ -7,7 +7,7 @@ from hashlib import sha256
 from tests import config
 from tests.config import session
 
-class TestLoginController(unittest.TestCase):
+class TestLogin(unittest.TestCase):
 
 	def user_id(self, email):
 		db = pymysql.connect(**config.database)

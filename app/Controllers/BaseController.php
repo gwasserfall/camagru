@@ -40,6 +40,20 @@ class BaseController
 		return $data;
 	}
 
+	public function getRequiredJSON($required) 
+	{
+		$data = $this->getJSON();
+
+		foreach ($required as $field) {
+			if (!isset($data[$field]) || is_null($data[$field])) {
+				RenderView::json([], 400, "Field '$field' is required by missing or null");
+				die();
+			}
+		}
+
+		return $data;
+	}
+
 	public function default()
 	{
 		// Render default View here
@@ -71,7 +85,7 @@ class BaseController
 
 		$GLOBALS["user"] = (new UserModel())->getUserByEmail($_SESSION["logged_in_uid"]);
 		$this->user = $GLOBALS["user"];
-		return (new UserModel())->getUserByEmail($_SESSION["logged_in_uid"]);
+		return $this->user;
 	}
 
 	public function keysMissing($array, $keys)

@@ -5,7 +5,7 @@ import requests
 import pymysql
 from tests import config
 
-class TestSignUpController(unittest.TestCase):
+class TestSignUp(unittest.TestCase):
 
 	def verify_email(self, email_address):
 		pass

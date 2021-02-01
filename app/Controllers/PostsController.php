@@ -23,12 +23,12 @@ class PostsController extends BaseController
 	public function add()
 	{
 		$user = $this->protectSelfJSON();
-		$data = $this->getJSON();
-		if (!$data)
-		{
-			RenderView::json([], 400, "No data submitted");
-			die();
-		}
+		$data = $this->getRequiredJSON(["layers", "comment"]);
+		// if (!$data)
+		// {
+		// 	RenderView::json([], 400, "No data submitted");
+		// 	die();
+		// }
 
 		$post = [];
 		$post["user_id"] = $user["id"];
