@@ -6,6 +6,8 @@ class Router {
 		return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
 	}
 
+
+	# "/controllerName/function"
 	public static function route($url) {
 
 		$result = [];
@@ -15,7 +17,7 @@ class Router {
 		
 		$url = $parsed["path"];
 
-		$url_array = array_values(array_filter(explode("/", $url))); // Disgusting!!!!!
+		$url_array = array_values(array_filter(explode("/", $url)));
 
 		$controller = isset($url_array[0]) ? $url_array[0] : '';
 		array_shift($url_array);

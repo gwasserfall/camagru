@@ -83,7 +83,7 @@ function main() {
 		echo "Added $counter stickers.\n";
 	}
 
-	echo "\nSetup complete, to launch webserver use : 'php -s 0.0.0.0:8000 -t public/'\n\n";
+	echo "\nSetup complete, to launch webserver use : 'php -S 0.0.0.0:8000 -t public/'\n\n";
 }
 
 function userInput($prompt, $default=false) {

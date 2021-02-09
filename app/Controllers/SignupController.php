@@ -23,11 +23,7 @@ class SignupController extends BaseController
 	{
 		if ($_SERVER['REQUEST_METHOD'] == "POST")
 		{
-			$data = $this->getJSON();
-
-			$missing = $this->keysMissing($data, ["email", "handle", "password", "first_name"]);
-			if ($missing)
-				RenderView::json([], 400, "Field '$missing' cannot be blank.");
+			$data = $this->getRequiredJSON(["email", "handle", "password", "first_name"]);
 
 			if (!Validate::password($data["password"]))
 				RenderView::json([], 400, "Password does not meet complexity requirements.");
