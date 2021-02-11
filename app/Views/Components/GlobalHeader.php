@@ -19,7 +19,6 @@
 	<script src="/js/posts/like.js"></script>
 	<title><?= $data["title"] ?? "404" ?></title>
 	<script>
-		// Hackzzzz
 		var overrideHandle = null
 	</script>
 </head>

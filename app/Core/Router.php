@@ -1,6 +1,8 @@
 <?php
 class Router {
 
+
+	// Escape HTML special characters to protect against XSS
 	public static function xssProtect($string)
 	{
 		return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
@@ -22,13 +24,10 @@ class Router {
 		$controller = isset($url_array[0]) ? $url_array[0] : '';
 		array_shift($url_array);
 
-
 		$action = isset($url_array[0]) ? $url_array[0] : '';
 		array_shift($url_array);
 
-
 		$query_string = $url_array;
-		
 
 		if(empty($controller)) {
 			$controller = "Home";
@@ -57,6 +56,5 @@ class Router {
 		} else {
 			RenderView::file("404");
 		}
-	}
-	
+	}	
 }
